@@ -24,9 +24,7 @@ function TaskList({
 }: TaskListProps) {
     return (
     <div className="space-y-4">
-        <h2>Task List component</h2>
-
-        {tasks.map((task) => (
+    {tasks.map((task) => (
         <TaskItem
             key={task.id}
             task={task}
