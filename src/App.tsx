@@ -44,10 +44,31 @@ function App(){
     },
   ]);
   const filteredTasks = tasks.filter((task) => {
-    if (filters.status && task.status !== filters.status) return false;
-    if (filters.priority && task.priority !== filters.priority) return false;
+  // No filters selected → show everything
+  if (!filters.status && !filters.priority) {
     return true;
-  });
+  }
+
+  // Both filters selected → match either one
+  if (filters.status && filters.priority) {
+    return (
+      task.status === filters.status ||
+      task.priority === filters.priority
+    );
+  }
+
+  // Only status selected
+  if (filters.status) {
+    return task.status === filters.status;
+  }
+
+  // Only priority selected
+  if (filters.priority) {
+    return task.priority === filters.priority;
+  }
+
+  return true;
+});
 
   function handleStatusChange(taskId: string, newStatus: TaskStatus) {
     setTasks((currentTasks) =>
