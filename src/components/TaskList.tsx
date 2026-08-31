@@ -15,12 +15,14 @@ export interface TaskListProps {
     tasks: Task[];
     onStatusChange: (taskId: string, newStatus: TaskStatus) => void;
     onDelete: (taskId: string) => void;
+    onEdit:(taskId:string)=>void;
 }
 
 function TaskList({
     tasks,
     onStatusChange,
     onDelete,
+    onEdit,
 }: TaskListProps) {
     return (
     <div className="space-y-4">
@@ -30,6 +32,7 @@ function TaskList({
             task={task}
             onStatusChange={onStatusChange}
             onDelete={onDelete}
+            onEdit={onEdit}
         />
         ))}
     </div>

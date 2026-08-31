@@ -4,12 +4,14 @@ export interface TaskItemProps {
     task: Task;
     onStatusChange: (taskId: string, newStatus: TaskStatus) => void;
     onDelete: (taskId: string) => void;
+    onEdit:(taskId:string)=>void;
 }
 
 function TaskItem({
     task,
     onStatusChange,
     onDelete,
+    onEdit,
     }: TaskItemProps) {
     const priorityColors = {
         low: "text-yellow-500",
@@ -43,6 +45,12 @@ function TaskItem({
                 className="rounded bg-red-500 px-2 py-1 text-white"
             >
                 Delete
+            </button>
+            <button
+                onClick={() => onEdit(task.id)}
+                className="rounded bg-red-500 px-2 py-1 text-white"
+            >
+                Edit
             </button>
             </div>
         </div>
