@@ -15,9 +15,9 @@ function TaskFilter({onFilterChange}:TaskFilterProps){
     const [priority, setPriority] = useState<'low' | 'medium' | 'high' | undefined>(undefined)
 
     return(
-        <div className="flex gap-3">
+        <div className="flex flex-col gap-4 sm:flex-row">
             <div>
-                <label className="font-bold">Status</label>
+            <label className="mb-2 block text-sm font-semibold text-slate-700">Status</label>
                 <select
                     onChange={(e) => {
                         const newStatus = e.target.value === 'all'
@@ -25,7 +25,8 @@ function TaskFilter({onFilterChange}:TaskFilterProps){
                             : e.target.value as TaskStatus;
                         setStatus(newStatus);
                         onFilterChange({ status: newStatus, priority });
-                    }}>
+                    }}
+                    className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm">
                     <option value="all">All</option>
                     <option value="pending">Pending</option>
                     <option value="in-progress">In Progress</option>
@@ -33,7 +34,7 @@ function TaskFilter({onFilterChange}:TaskFilterProps){
                 </select>
             </div>
             <div>
-                <label className="font-bold">Priority</label>
+                <label className="mb-2 block text-sm font-semibold text-slate-700">Priority</label>
                 <select
                     onChange={(e) => {
                         const newPriority = e.target.value === 'all'
@@ -42,6 +43,7 @@ function TaskFilter({onFilterChange}:TaskFilterProps){
                         setPriority(newPriority);
                         onFilterChange({ status, priority: newPriority });
                     }}
+                    className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm"
                 >
                     <option value="all">All</option>
                     <option value="low">Low</option>
