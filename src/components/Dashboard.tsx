@@ -105,15 +105,13 @@ function Dashboard(){
                         Task Manager
                     </h1>
                 </header>
-            <TaskStats tasks={tasks}
-            darkMode={darkMode} />
+            <TaskStats tasks={tasks}/>
                 <TaskForm
                     key={editingTask?.id??'new'}
                     onAddTask={handleAddTask}
                     editingTask={editingTask}
                     onEditTask={handleUpdatedTask}
                 />
-
                 <section className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                     <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                         <div className="flex-1">
@@ -164,4 +162,4 @@ function Dashboard(){
 )
 }
 
-    export default Dashboard;
+export default Dashboard;

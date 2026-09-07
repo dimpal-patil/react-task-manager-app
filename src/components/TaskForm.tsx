@@ -111,7 +111,7 @@ function TaskForm({onAddTask, editingTask, onEditTask}:TaskProps){
                             description:undefined,
                         }));
                     }}
-                    className="w-full rounded-lg border border-slate-300 px-3 py-2.5 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2.5"
                 />
                 {errors.description && <p className="mt-1 text-sm text-red-600">{errors.description}</p>}
             </div>
@@ -122,7 +122,7 @@ function TaskForm({onAddTask, editingTask, onEditTask}:TaskProps){
                     id='statusInput'
                     value={status}
                     onChange={(e) => setStatus(e.target.value as TaskStatus)}
-                    className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
+                    className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5"
                 >
                     <option value='pending'>Pending</option>
                     <option value='in-progress'>In Progress</option>
@@ -136,7 +136,7 @@ function TaskForm({onAddTask, editingTask, onEditTask}:TaskProps){
                     id='priorityInput'
                     value={priority}
                     onChange={(e) => setPriority(e.target.value as Priority)}
-                    className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
+                    className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5"
                 >
                     <option value='low'>Low</option>
                     <option value='medium'>Medium</option>
@@ -158,13 +158,13 @@ function TaskForm({onAddTask, editingTask, onEditTask}:TaskProps){
                             dueDate:undefined
                         }));
                     }}
-                    className="w-full rounded-lg border border-slate-300 px-3 py-2.5 outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2.5"
                 />
                 {errors.dueDate && <p className="mt-1 text-sm text-red-600">{errors.dueDate}</p>}
             </div>
 
             <button type='submit'
-            className="mt-1 w-full rounded-lg bg-cyan-600 px-4 py-2.5 font-semibold text-white transition hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 md:col-span-2">
+            className="mt-1 w-full rounded-lg bg-cyan-600 px-4 py-2.5 font-semibold text-white md:col-span-2">
                 {editingTask ? "Update Task" : "Add Task"}
             </button>
             </div>

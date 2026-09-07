@@ -3,7 +3,6 @@ import type { Task } from "./TaskList";
 
 interface TaskStatsProps{
     tasks:Task[];
-    darkMode : boolean;
 }
 
 function TaskStats({tasks}:TaskStatsProps){
